@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { MyTextField } from "./TextField";
+
+<Meta title="Components/TextField" component={MyTextField} />
+
+# Campo de texto
+
+Campos de texto permitem que os usuários digitem e editem texto.
+
+<MyTextField />
+
+Campos de texto permitem que os usuários insiram texto em uma interface de usuário. Eles geralmente aparecem em formulários e diálogos.
+
+## Campo de texto básico
+
+O componente TextField wrapper é um controle de formulário completo, incluindo um rótulo, entrada e texto de ajuda. Ele vem com três variantes: delineado (padrão), preenchido e padrão.
+
+<ArgsTable of={MyTextField} />
+
+<Canvas>
+  <Story
+    name="TextField Component"
+    args={{
+      ...MyTextField.defaultProps,
+      label: "Digite algo aqui...",
+      variant: 'outlined',
+    }}
+  >
+    {(args) => <MyTextField {...args} />}
+  </Story>
+</Canvas>

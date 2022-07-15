@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { MyRadio } from "./RadioButton";
+
+<Meta title="Components/RadioButton" component={MyRadio} />
+
+# Botões de opção
+
+Botões de opção permitem o usuário selecionar uma das opções de um conjunto.
+
+<MyRadio />
+
+Use botões de opção quando um usuário precisar ver todas as opções disponíveis. Se várias opções podem ser suprimidas da visualização, considere usar um menu suspenso (dropdown), pois ele utiliza menos espaço.
+
+Os botões de opção devem ter a opção comum e mais usada selecionada por padrão.
+
+<ArgsTable of={MyRadio} />
+
+<Canvas>
+  <Story
+    name="Radio Button Component"
+    args={{
+      ...MyRadio.defaultProps,
+      label: "Selecione uma das opções",
+      option1: "1",
+      option2: "2",
+      labelOption1: "1.1",
+      labelOption2: "1.2",
+    }}
+  >
+    {(args) => <MyRadio {...args} />}
+  </Story>
+</Canvas>

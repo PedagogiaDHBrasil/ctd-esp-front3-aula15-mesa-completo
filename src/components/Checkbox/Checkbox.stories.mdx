@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { MyCheckbox } from "./Checkbox";
+
+<Meta title="Components/Checkbox" component={MyCheckbox} />
+
+# Caixa de seleção
+
+Caixas de seleção permitem ao usuário selecionar um ou mais itens de um conjunto.
+
+<MyCheckbox />
+
+Caixas de seleção podem ser usadas para ativar ou desativar uma opção.
+
+<ArgsTable of={MyCheckbox} />
+
+<Canvas>
+  <Story
+    name="Checkbox Component"
+    args={{
+      ...MyCheckbox.defaultProps,
+      label: "Selecionar",
+    }}
+  >
+    {(args) => <MyCheckbox {...args} />}
+  </Story>
+</Canvas>

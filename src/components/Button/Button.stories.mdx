@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { MyButton } from "./Button";
+
+<Meta title="Components/Button" component={MyButton} />
+
+# Button
+
+Botões permitem que os usuários tomem ações e decisões com um simples toque.
+
+<MyButton />
+
+Botões comunicam ações que os usuários podem realizar. Eles são normalmente colocados em toda a interface do usuário, em lugares como:
+
+- Janelas modais
+- Formulários
+- Cartões
+- Barras de ferramentas
+
+## Basic Button
+
+O Botão vem com três variantes: texto (padrão), contido e delineado.
+
+<ArgsTable of={MyButton} />
+
+<Canvas>
+  <Story
+    name="Button Component"
+    args={{
+      ...MyButton.defaultProps,
+      label: 'Button',
+      variant: 'contained'
+    }}
+  >
+  {(args) => <MyButton {...args}/>}
+  </Story>
+</Canvas>
